@@ -193,7 +193,7 @@ export async function compressPdf(file: File): Promise<Uint8Array> {
  * Triggers a browser download of the given bytes as a PDF file.
  */
 export function downloadPdfBytes(pdfBytes: Uint8Array, filename: string) {
-  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;

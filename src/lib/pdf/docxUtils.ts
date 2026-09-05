@@ -103,7 +103,7 @@ export async function convertPdfToDocx(
         canvas.height = viewport.height;
         const ctx = canvas.getContext('2d');
         if (ctx) {
-          await page.render({ canvasContext: ctx, viewport }).promise;
+          await page.render({ canvasContext: ctx, viewport, canvas } as any).promise;
           const imageBlob = await new Promise<Blob | null>((resolve) =>
             canvas.toBlob(resolve, 'image/png')
           );
@@ -122,7 +122,7 @@ export async function convertPdfToDocx(
                       width: Math.round(viewport.width * scale),
                       height: Math.round(viewport.height * scale),
                     },
-                  }),
+                  } as any),
                 ],
                 pageBreakBefore: pageNum > 1,
               })
