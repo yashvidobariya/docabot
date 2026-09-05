@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Mail, MapPin, Clock } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us | Docabot",
@@ -45,60 +46,7 @@ export default function ContactPage() {
 
         <div className="bg-surface border border-border rounded-3xl p-8 md:p-10">
           <h2 className="text-2xl font-bold mb-6 text-foreground">Send Us a Message</h2>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium mb-2 text-foreground">
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                placeholder="How can we help?"
-                className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                placeholder="Tell us what's on your mind..."
-                className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="px-8 py-4 bg-primary text-white font-medium rounded-xl hover:bg-primary-dark transition-colors shadow-md w-full sm:w-auto"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </div>
