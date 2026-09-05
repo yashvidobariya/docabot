@@ -13,7 +13,7 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-bold text-2xl text-primary dark:text-white tracking-tight">
-            Docabot
+            Docabot 
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="text-foreground/80 hover:text-primary transition-colors">Home</Link>
